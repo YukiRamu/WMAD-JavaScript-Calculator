@@ -1,0 +1,82 @@
+/* header*/
+:root {
+  --primary: rgb(115, 26, 52);
+  --primaryGrad: rgb(163, 42, 54);
+  --secondary: rgb(29, 32, 42);
+  --third: rgb(138, 39, 72);
+  --thirdGrad: rgb(179, 64, 72);
+  --text1:#ffffff;
+  --text2: #d24c4d;
+  --accent:#ffcc99;
+}
+.header {
+  padding: 1em;
+  color: var(--text1);
+}
+/* body */
+body {
+  height: 100vh;
+  background: linear-gradient(var(--primary), var(--primaryGrad));
+  background-repeat: no-repeat;
+}
+.main {
+  width: 30%;
+  margin: 0 auto;
+  box-shadow: 0 0 3em var(--secondary);
+}
+.main input {
+  width: 100%;
+  text-align: right;
+  border: none;
+  color: var(--text1);
+}
+
+.main .numInput {
+  background-color: var(--third);
+  font-size: 2em;
+}
+.main .result {
+  font-size: 4em;
+  background: linear-gradient(var(--third), var(--thirdGrad));
+}
+/* Calc styling*/
+.calcButtons {
+  display: grid;
+  grid-template: repeat(5, 1fr) / repeat(4, 1fr);
+  background-color: var(--secondary);
+}
+.calcButtons button {
+  padding: 0.7em 0.5em;
+  font-size: 1.5em;
+  border: none;
+  color: var(--text2);
+  background-color: var(--secondary);
+}
+.calcButtons button:hover {
+  background-color: var(--accent);
+}
+.calcButtons .plus {
+  grid-row: span 2;
+}
+.calcButtons .operator {
+ color: var(--accent);
+}
+.calcButtons .operator:hover {
+  color: var(--text2);
+ }
+
+/* footer*/
+.footer {
+  position: fixed;
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: var(--text1);
+}
+.footer i {
+  color: var(--accent);
+}
+.footer i:hover {
+  color: var(--text1);
+}
