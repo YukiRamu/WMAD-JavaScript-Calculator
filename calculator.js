@@ -8,8 +8,9 @@ const result = document.querySelector(".result");
 //calc buttons (all) - make an array
 const calcButtonsArray = Array.from(document.querySelectorAll(".calc-button"));
 
-//Usability
+//More functions
 let tempClear = ""; //to remove zero in the input field
+const operators = "+−×÷"; //to handle the case multiple operators are input i.e. ++++- 
 
 /* ================== Functions Declaration ================== */
 const replaceZeroToInputNum = () => {
@@ -28,12 +29,13 @@ window.addEventListener("DOMContentLoaded", tempClearSet);
 
 /* ================== Calculation ================== */
 /* Array with map method: 
-getting the inner text of the clicked button and
+getting the class of the clicked button and
 execute the action in each case */
 calcButtonsArray.map((clickedBtn) => {
   clickedBtn.addEventListener("click", (event) => {
 
-    switch (event.target.classList[1]) {
+
+    switch (event.target.classList[1]) { //check the class of the clicked button
       case "number":
         numInput.value += event.target.innerText;
         /* replace zero with the input number after "C" clicked */
@@ -41,6 +43,25 @@ calcButtonsArray.map((clickedBtn) => {
           numInput.value = numInput.value.slice(1);
           tempClear = "";
         }
+        break;
+
+      case "operator":
+        //********under construction
+        console.log("clicked button is " + event.target.classList[1])
+        console.log("before " + numInput.value)
+
+        numInput.value += event.target.innerText;
+
+        console.log("after operator clicked " + numInput.value); //8×
+
+        if (numInput.value.slice(-1).includes(operators)) {
+          console.log("operator clicked twice");
+          //need to replace or delete the first operator
+
+        } else {
+
+        }
+
         break;
 
       case "clear": //clear 
