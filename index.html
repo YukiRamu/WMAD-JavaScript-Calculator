@@ -4,9 +4,11 @@
 <head>
 	<title>Calculator</title>
 	<meta charset="UTF-8" />
-	<meta name="viewport" content="width='device-width', initial-scale='1.0'" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE-Edge" />
-	<!--Icon: fontawesome-->
+	<!--Google font-->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 	<!--Icon: fontawesome-->
 	<script src="https://kit.fontawesome.com/a62f436beb.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="./reset.css" />
@@ -21,36 +23,38 @@
 	<!--main-->
 	<div class="main">
 
-		<input type="text" class="numInput" id="numInput" placeholder="0" />
-		<input type="text" class="result" id="result" />
+		<!--input value to be inserted-->
+		<input data-previous type="text" class="numInput" id="numInput"  value="0" disabled/>
+		<input data-current type="text" class="result" id="result" value="" disabled/>
 
-		<div class="calcButtons">
-			<button class="AC" id="AC">AC</button>
-			<button class="+/-" id="+/-">+/-</button>
-			<button class="%" id="%">%</button>
-			<button class="operator" id="÷">÷</button>
+		<div class="calculator">
+			<button data-clear class="calc-button clear" id="C">C</button>
+			<button data-plusMinus class="calc-button plusMinus" id="plusMinus">+/-</button>
+			<button data-percent class="calc-button percent" id="percent">&percnt;</button>
+			<button data-operator class="calc-button operator" id="div">&divide;</button>
 
-			<button class="seven" id="seven">7</button>
-			<button class="eight" id="eight">8</button>
-			<button class="nine" id="nine">9</button>
-			<button class="operator" id="mul">&times;</button>
+			<button data-number class="calc-button number" id="seven">7</button>
+			<button data-number class="calc-button number" id="eight">8</button>
+			<button data-number class="calc-button number" id="nine">9</button>
+			<button data-operator class="calc-button operator" id="mul">&times;</button>
 
-			<button class="four" id="four">4</button>
-			<button class="five" id="five">5</button>
-			<button class="six" id="six">6</button>
-			<button class="operator" id="minus">&minus;</button>
+			<button data-number class="calc-button number" id="four">4</button>
+			<button data-number class="calc-button number" id="five">5</button>
+			<button data-number class="calc-button number" id="six">6</button>
+			<button data-operator class="calc-button operator" id="minus">&minus;</button>
 
-			<button class="one" id="one">1</button>
-			<button class="two" id="two">2</button>
-			<button class="three" id="three">3</button>
-			<button class="operator plus" id="plus">&plus;</button>
+			<button data-number class="calc-button number" id="one">1</button>
+			<button data-number class="calc-button number" id="two">2</button>
+			<button data-number class="calc-button number" id="three">3</button>
+			<button data-operator class="calc-button operator plus" id="plus">&plus;</button>
 
-			<button class="zero" id="zero">0</button>
-			<button class="point" id="point">.</button>
-			<button class="operator" id="equal">&equals;</button>
+			<button data-number class="calc-button number" id="zero">0</button>
+			<button data-point class="calc-button point" id="point">.</button>
+			<button data-equals class="calc-button equals" id="equals">&equals;</button>
 		</div>
+
 	</div>
-	</div>
+
 	<!--footer-->
 	<footer class="footer">
 		<h4>
