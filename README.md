@@ -1,6 +1,6 @@
 <h1 align="center">🖩JavaScript Calculator🖩</h1>
 
-<h3><a href="https://yukiramu.github.io/WMAD-JavaScript-Calculator/" target="_blank">Go to the app</a></h3>
+<h3><a href="https://yukiramu.github.io/WMAD-JavaScript-Calculator/" target="_blank">🌷Go to the app</a></h3>
 
 <h3 align="left">💡What it can do:</h3>
 
