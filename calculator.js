@@ -22,7 +22,7 @@ const calculator = {
   decimalPresed: false //default: not clicked. to be changed to true when clicked
 }
 
-//More functions
+//Validation check
 let tempClear = ""; //to remove zero in the input field
 const operators = "+−×÷"; //to handle the case where multiple operators are input i.e. ++++- 
 const plusMinus = "+−";//to eliminate the case where multiple operators are acceptable i.e. 2*-2
@@ -33,6 +33,14 @@ const replaceZeroToInputNum = () => {
   //replace the default input value "0" with the input number
   numInput.value = numInput.value.slice(1); //display only the second num 
   tempClear = "";
+}
+const deleteTheLast = () => {
+  //delete the last operator
+  numInput.value = numInput.value.slice(0, -1);
+}
+const deleteSecondFromTheLast = () => {
+  //delete the operator second from the last = replace it with the last operator
+  numInput.value = numInput.value.replace(numInput.value.substr(-2, 1), "");
 }
 const clearInput = () => {
   numInput.value = ""; //clear the input
@@ -62,9 +70,6 @@ calcButtonsArray.map((clickedBtn) => {
 
       case "operator":
         //**************** under construction ****************//
-        //should I follow evel() function way?
-        // or should I follow a real-life calculator?
-
         tempClear = "";// to keep the default 0 for * and / calculation
         numInput.value += event.target.innerText;
 
@@ -82,35 +87,45 @@ calcButtonsArray.map((clickedBtn) => {
           */
           if ((mulDiv.includes(numInput.value.substr(-2, 1)) && plusMinus.includes(numInput.value.substr(-1))) || (numInput.value.substr(-2) === plusMinus) || (numInput.value.substr(-2) === plusMinus.split("").reverse().join(""))) {
             console.log("Leave as it is. OK to calculate");
-            //under construnction
-            //How to hundle the case => 9 * + - => check the last three input?  
+            console.log("THIRD from the last is " + operators.includes(numInput.value.substr(-3, 1)));
+            console.log(numInput.value.substr(-3, 1));
+            //Below is for the case where "pattern 1 above" plus "THIRD from the last is * or /". i.e)6 * - +, 6 + - +
+            if (operators.includes(numInput.value.substr(-3, 1))) {
+              //delete the operator second from the last 
+              deleteSecondFromTheLast();
+              if ((plusMinus.includes(numInput.value.substr(-2, 1))) && (plusMinus.includes(numInput.value.substr(-1)))) {
+                //i.e) 6-- after the replacement above
+                deleteSecondFromTheLast();
+              }
+            } else {
+              //Go ahead with the calculation
+              ;
+            }
           } else {
             console.log("replacng operator");
-
-            //replace the first operator with the second operator  
-            let secondFromTheLast = numInput.value.substr(-2, 1);
-            let secondOperator = numInput.value.substr(-1);
-
-            console.log("second from the last is " + secondFromTheLast);
-            console.log("last operator is  " + secondOperator);
+            console.log("second from the last is " + numInput.value.substr(-2, 1));
+            console.log("last operator is  " + numInput.value.substr(-1));
             console.log("before replace " + numInput.value);
 
-            //delete the operator second from the last 
-            numInput.value = numInput.value.replace(secondFromTheLast, "");
-            /* issue why?
-            // before replace => 0×9××
-            // after replace => 09××
-            // why does it delete "x" second from the FIRST as well?
-            */
+            //delete the operator second from the last i.e)6 * / , 6 / *, 6 - -, 6 + +
+            deleteSecondFromTheLast();
 
             console.log("after replace. Input is " + numInput.value);
 
-            //check if multiple and device operators come consecutively i.e) 9*/ or 9/*
+            //check if multiple and devide operators come consecutively at the very last i.e) 9*/ or 9/*
             if ((operators.includes(numInput.value.substr(-2, 1))) && (operators.includes(numInput.value.substr(-1)))) {
               console.log("I am here2");
-              //delete the last operator and make a user input a proper operator or number
+              /* Two validation check patterns are prepared. Both works. Pick whichever you want
+              //Pattern 1: delete the last operator and make a user input a proper operator or number
               //i.e) user input 9*-/ => 9*
-              numInput.value = numInput.value.slice(0, -1); //delete the last operator
+              //deleteTheLast(); */
+              //Pattern 2: delete the operator second from the last 
+              deleteSecondFromTheLast();
+              /* Patterm 2 issue why?
+              // before replace => 9×−6×÷
+              // after replace => 9−6×÷
+              // why does it delete "x" second from the FIRST?
+              */
             } else {
               //operators are already replaced. Go ahead with the calculation
               ;
@@ -139,7 +154,7 @@ calcButtonsArray.map((clickedBtn) => {
       case "equals": //calculate the result
         try {
           if ((numInput.value.indexOf("−") != -1) || (numInput.value.indexOf("×") != -1) || (numInput.value.indexOf("÷") != -1)) {
-            numInput.value = numInput.value.replace(/−/g, "-"); //replace minus
+            numInput.value = numInput.value.replace(/\−/g, "-"); //replace minus
             numInput.value = numInput.value.replace(/×/g, "*"); //replace times 
             numInput.value = numInput.value.replace(/÷/g, "/"); //replace divide
           }
