@@ -12,11 +12,11 @@
 <h4>■Two consecutive operators are entered</h4>
 &nbsp&nbspCase 1) 9 * / => change it to 9 /<br>
 &nbsp&nbspCase 2) 9 * + - => change it to 9 * -<br>
-&nbsp&nbspCase 3) Pattern 1: 9 * + / => change back to 9 * &nbsp&nbsp&nbspPattern 2: 9 * + / => change to 9 /<br><br>
+&nbsp&nbspCase 3) Pattern 1: 9 * + / => change back to 9 * &nbsp&nbsp&nbspPattern 2: 9 * + / => change to 9 /
 
 <h3 align="left">🙇‍♀️Under Construction:</h3>
 &nbsp&nbsp 1) +/- and % function<br>
-&nbsp&nbsp 2) Consecutive decimal input handling<br>
+&nbsp&nbsp 2) Consecutive decimal input handling<br><br>
 
 
 ![image](https://user-images.githubusercontent.com/76931326/111820268-86a36e80-889e-11eb-83a0-7193e7130b00.png)
