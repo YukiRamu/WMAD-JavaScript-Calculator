@@ -1,10 +1,4 @@
-/* This is a simple JavaScript Calculator 
-// One case is still under construction ....
-// the case where + and - are clicked consecutively 
-// and another operator (not a number) is clicked again
-// i.e 9 - + ÷ 
-// if it is 9 - + 6, this calculator can give you 3 as a result
-*/
+/* This is a simple JavaScript Calculator */
 
 /* ========== Global Variables Declaration ========== */
 //input fields
@@ -173,11 +167,6 @@ calcButtonsArray.map((clickedBtn) => {
   })
 })
 
-
-//===========================-EOF=================================
-//numInput.value = numInput.value.replace(secondFromTheLast, secondOperator);
-//delete the second operator
-// numInput.value = numInput.value.slice(0, -2); //delete 2 from the last
 
 
 
