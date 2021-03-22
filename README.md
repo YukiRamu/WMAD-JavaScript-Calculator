@@ -15,7 +15,8 @@
 &nbsp&nbspCase 3) Pattern 1: 9 * + / => change back to 9 * &nbsp&nbsp&nbspPattern 2: 9 * + / => change to 9 /<br><br>
 
 <h3 align="left">🙇‍♀️Under Construction:</h3>
-&nbsp&nbsp 1) Date and Time refresh every 2 minutes, not instantly.<br>
-&nbsp&nbsp 2) This function is still under construction.
+&nbsp&nbsp 1) +/- and % function<br>
+&nbsp&nbsp 2) Consecutive decimal input handling<br>
+
 
 ![image](https://user-images.githubusercontent.com/76931326/111820268-86a36e80-889e-11eb-83a0-7193e7130b00.png)
