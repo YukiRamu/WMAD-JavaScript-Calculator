@@ -1,12 +1,7 @@
 <h1 align="center">🖩JavaScript Calculator🖩</h1>
-
-<<<<<<< HEAD
-<h3 align="left">💡What can the app do?: Case handling features</h3>
-=======
 <h3><a href="https://yukiramu.github.io/WMAD-JavaScript-Calculator/" target="_blank">🌷Go to the app</a></h3>
 
 <h3 align="left">💡What it can do:</h3>
->>>>>>> f95c820967eea807629924ad211998e987bfdf3a
 
 - Basic calculation with + - * /.  
 - Remove the default zero in the display when a number is entered for the first time.
